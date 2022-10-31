@@ -22,13 +22,15 @@ public class BulletBehavior : MonoBehaviour
         gameObject.transform.position.y > 3 || gameObject.transform.position.y < -5) || 
         (collision.gameObject.tag == "Islands"))
         {
+            Debug.Log("test");
             Destroy(gameObject);
         }
 
     }
-
+    /*
     private void OnBecameInvinsible()
     {
         Destroy(gameObject); 
     }
+    */
 }

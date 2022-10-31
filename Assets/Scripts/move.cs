@@ -130,8 +130,7 @@ public class move : MonoBehaviour
     }
         
     private void fire()
-    {
-        
+    {       
         GameObject bullet_instance = Instantiate(bullet, firePoint.position, firePoint.rotation);
         bullet_instance.transform.position = new Vector3(bullet_instance.transform.position.x, bullet_instance.transform.position.y, -2f);
         Rigidbody2D re = bullet_instance.GetComponent<Rigidbody2D>();
@@ -144,6 +143,7 @@ public class move : MonoBehaviour
     {
         if(collision.gameObject.tag == "Bucket")
         {
+            Debug.Log("test");
             Destroy(collision.gameObject);
             GlobalBehavior.GlobalBehaviorInstance.PickUp_Bucket();
         }
