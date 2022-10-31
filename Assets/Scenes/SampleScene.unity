@@ -7517,6 +7517,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: potatobear
       objectReference: {fileID: 0}
+    - target: {fileID: 413512692348986599, guid: fe5053519bd5f417f9f49f9f41f0079a, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1000400020833550210, guid: fe5053519bd5f417f9f49f9f41f0079a, type: 3}
       propertyPath: m_RootOrder
       value: 4

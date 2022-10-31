@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5703790569253836284}
   m_Layer: 0
   m_Name: PotatoSprout
-  m_TagString: Bucket
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
