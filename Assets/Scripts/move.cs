@@ -19,7 +19,7 @@ public class move : MonoBehaviour
     private Transform firePoint;
     private float bulletSpeed = 4f;
     private float nextFire = 0f;
-    private float cooldown = 0.2f;
+    private float cooldown = 0.5f;
     #endregion
     
     void Start()
@@ -57,6 +57,7 @@ public class move : MonoBehaviour
         if (Input.GetKey("w"))
         {
             pos.y += speed * Time.deltaTime;
+            firePoint.eulerAngles = new Vector3(0, 0, 0);
         }
 
         // "s" can be replaced with any key
@@ -64,6 +65,7 @@ public class move : MonoBehaviour
         if (Input.GetKey("s"))
         {
             pos.y -= speed * Time.deltaTime;
+            firePoint.eulerAngles = new Vector3(0, 0, 180);
         }
 
         // "d" can be replaced with any key
@@ -71,6 +73,7 @@ public class move : MonoBehaviour
         if (Input.GetKey("d"))
         {
             pos.x += speed * Time.deltaTime;
+            firePoint.eulerAngles = new Vector3(0, 0, 270);
         }
 
         // "a" can be replaced with any key
@@ -78,6 +81,7 @@ public class move : MonoBehaviour
         if (Input.GetKey("a"))
         {
             pos.x -= speed * Time.deltaTime;
+            firePoint.eulerAngles = new Vector3(0, 0, 90);
         }
 
 
@@ -143,7 +147,6 @@ public class move : MonoBehaviour
     {
         if(collision.gameObject.tag == "Bucket")
         {
-            Debug.Log("test");
             Destroy(collision.gameObject);
             GlobalBehavior.GlobalBehaviorInstance.PickUp_Bucket();
         }
