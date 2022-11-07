@@ -27,7 +27,6 @@ public class BulletBehavior : MonoBehaviour
         //(collision.gameObject.tag == "Islands"))
         if(collision.gameObject.tag == "Islands")
         {
-            Debug.Log("bullet destroyed");
             Destroy(gameObject);
         }
         
