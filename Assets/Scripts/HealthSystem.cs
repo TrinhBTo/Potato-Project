@@ -1,0 +1,69 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class HealthSystem : MonoBehaviour
+{
+
+    public int health;
+    public int max_health;
+
+    public Image[] hearts = new Image[4];
+    public Sprite redHeart;
+    public Sprite BlackHeart;
+
+    void Start()
+    {
+        health = 4;
+        max_health = 4;
+    }
+
+    void Update()
+    {
+        for(int i = 0; i < hearts.Length; i ++)
+        {
+            if(i < health)
+            {
+                hearts[i].sprite = redHeart;
+            }
+            else
+            {
+                hearts[i].sprite = BlackHeart;
+            }
+            if(i < max_health)
+            {
+                hearts[i].enabled = true;
+            }
+            else
+            {
+                hearts[i].enabled = false;
+            }
+        }
+        
+        if(Input.GetKeyDown("1"))
+        {
+            AddLife();
+        }
+        if(Input.GetKeyDown("2"))
+        {
+            MinusLife();
+        }
+        
+    }
+
+    void AddLife()
+    {
+        if(health < max_health)
+        {
+            ++health;
+        }
+    }
+    void MinusLife()
+    {
+        if(health > 0)
+        {
+            --health;
+        }
+    }
+}

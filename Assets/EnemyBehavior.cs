@@ -36,7 +36,6 @@ public class EnemyBehavior : MonoBehaviour
 
             if (dirX < 0)
             {
-                Debug.Log("test");
                 spriteRenderer.flipX = true;
             }
             else
