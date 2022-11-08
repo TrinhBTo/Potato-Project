@@ -2318,6 +2318,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1448066901106251595, guid: 41c066894f685734a83d6c60ebf2159c, type: 3}
+      propertyPath: m_TagString
+      value: Human
+      objectReference: {fileID: 0}
     - target: {fileID: 1448066901106251597, guid: 41c066894f685734a83d6c60ebf2159c, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -9564,8 +9568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a8bdc0cb074c2f48bcfb6c20b2654b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  max_health: 0
   hearts:
   - {fileID: 1084262512}
   - {fileID: 109463319}

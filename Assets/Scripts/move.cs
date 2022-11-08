@@ -150,7 +150,14 @@ public class move : MonoBehaviour
             Destroy(collision.gameObject);
             GlobalBehavior.GlobalBehaviorInstance.PickUp_Bucket();
         }
-    }
 
+    }
+    void OnCollisionEnter2D(Collision2D myCollisionInfo)
+    {
+            if(myCollisionInfo.gameObject.tag == "Human")
+        {
+            HealthSystem.MinusLife();
+        }
+    }
 }
 

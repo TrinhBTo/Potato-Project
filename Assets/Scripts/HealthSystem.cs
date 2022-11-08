@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class HealthSystem : MonoBehaviour
 {
 
-    public int health;
-    public int max_health;
+    public static int health;
+    public static int max_health;
 
     public Image[] hearts = new Image[4];
     public Sprite redHeart;
@@ -52,14 +52,14 @@ public class HealthSystem : MonoBehaviour
         
     }
 
-    void AddLife()
+    public static void AddLife()
     {
         if(health < max_health)
         {
             ++health;
         }
     }
-    void MinusLife()
+    public static void MinusLife()
     {
         if(health > 0)
         {

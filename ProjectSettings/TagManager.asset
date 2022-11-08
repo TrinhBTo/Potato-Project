@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Islands
   - Bucket
+  - Human
   layers:
   - Default
   - TransparentFX

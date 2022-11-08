@@ -26,10 +26,15 @@ public class EnemyBehavior : MonoBehaviour
         // spriteRenderer.flipX = direction.x < 0;
         // transform.position += direction * moveSpeed * Time.deltaTime;
 
+        if(Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d") || Input.GetKey("w"))
+        {
+        }
+        else{
+            dirX = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
+            dirY = Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime;
+            transform.position = new Vector2(transform.position.x + dirX, transform.position.y + dirY);
+        }
 
-        dirX = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
-        dirY = Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime;
-        transform.position = new Vector2(transform.position.x + dirX, transform.position.y + dirY);
 
         if (dirX != 0)
         {
