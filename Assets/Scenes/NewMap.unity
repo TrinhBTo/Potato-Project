@@ -3070,7 +3070,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000000
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -4718,6 +4718,14 @@ PrefabInstance:
     - target: {fileID: 1000400020833550210, guid: fe5053519bd5f417f9f49f9f41f0079a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174531686048757724, guid: fe5053519bd5f417f9f49f9f41f0079a, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174531686048757724, guid: fe5053519bd5f417f9f49f9f41f0079a, type: 3}
+      propertyPath: m_Size.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1174531686048757724, guid: fe5053519bd5f417f9f49f9f41f0079a, type: 3}
       propertyPath: m_IsTrigger
@@ -6909,6 +6917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PotatoBucket: {fileID: 1278367060}
+  isEscape: 0
 --- !u!1 &1278367058
 GameObject:
   m_ObjectHideFlags: 0
