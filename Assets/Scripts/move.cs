@@ -30,7 +30,7 @@ public class move : MonoBehaviour
         //Vector3 temp = new Vector3(transform.position.x, transform.position.y, -2f);
         //Vector2 temp = new Vector2(transform.position.x, transform.position.y);
         //temp.z = -2f;
-        firePoint = transform;
+        //firePoint = transform;
         bullet = Resources.Load<GameObject>("Prefabs/PotatoSprout");
         Debug.Assert(bullet != null);
     }
@@ -38,13 +38,16 @@ public class move : MonoBehaviour
     void Update()
     {   
         #region Player rotation based on mouse position
+        /*
         //Get the Screen positions of the object
-         Vector2 positionOnScreen = Camera.main.WorldToViewportPoint (transform.position);         
-         //Get the Screen position of the mouse
-         Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint (transform.position);         
+        //Get the Screen position of the mouse
+        Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
         //Get the angle between the points
         float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
-        transform.rotation =  Quaternion.Euler (new Vector3(0f,0f,angle + 90));
+        firePoint.rotation = Quaternion.Euler (new Vector3(0f,0f,angle + 90));
+        //transform.rotation =  Quaternion.Euler (new Vector3(0f,0f,angle + 90));
+        */
         #endregion
 
         #region movement
@@ -92,10 +95,18 @@ public class move : MonoBehaviour
 
     private void fire()
     {       
-        GameObject bullet_instance = Instantiate(bullet, firePoint.position, firePoint.rotation);
+        //Get the Screen positions of the object
+        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint (transform.position);         
+        //Get the Screen position of the mouse
+        Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        //Get the angle between the points
+        float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
+        Vector2 temp = mouseOnScreen - positionOnScreen;
+        GameObject bullet_instance = Instantiate(bullet, transform.position, Quaternion.Euler(new Vector3(0f,0f,angle + 90)));
         bullet_instance.transform.position = new Vector3(bullet_instance.transform.position.x, bullet_instance.transform.position.y, -2f);
+        
         Rigidbody2D re = bullet_instance.GetComponent<Rigidbody2D>();
-        re.velocity = firePoint.up * bulletSpeed;
+        re.velocity = bullet_instance.transform.up * bulletSpeed;
         nextFire = Time.time + cooldown;
 
     }

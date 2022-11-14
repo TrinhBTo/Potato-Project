@@ -4853,6 +4853,10 @@ PrefabInstance:
       value: potatobear (1)
       objectReference: {fileID: 0}
     - target: {fileID: 413512692348986599, guid: fe5053519bd5f417f9f49f9f41f0079a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413512692348986599, guid: fe5053519bd5f417f9f49f9f41f0079a, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -6956,7 +6960,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859470596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1, y: -1.292, z: 0}
+  m_LocalPosition: {x: 2.29, y: -5.31, z: 0}
   m_LocalScale: {x: 0.22696398, y: 0.43531978, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7285,9 +7289,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1240041189
-  m_SortingLayer: 3
-  m_SortingOrder: 7
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a3afcfef4a46e425ca304a671eb3bbed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7307,8 +7311,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142978335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.09, y: -0.89, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.3, z: 1}
+  m_LocalPosition: {x: 2.25, y: -4.69, z: 0}
+  m_LocalScale: {x: 0.32672, y: 0.24504001, z: 0.8168}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -7432,13 +7436,13 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1142978340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7451,7 +7455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35294d6dc89e2477c841b6023c647bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 1142978339}
   movement: {x: 0, y: 0}
   degreesPerSecond: 45
   mouse: 0
@@ -10833,8 +10837,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1938105601}
+  - component: {fileID: 1938105603}
   - component: {fileID: 1938105600}
+  - component: {fileID: 1938105602}
   m_Layer: 0
   m_Name: PotatoSackCount
   m_TagString: Untagged
@@ -10894,21 +10899,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1938105601
-Transform:
+--- !u!222 &1938105602
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938105599}
+  m_CullTransparentMesh: 1
+--- !u!224 &1938105603
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938105599}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.2482, y: -1.245, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3015996, y: 0.3086439, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 11.2482, y: -1.245}
+  m_SizeDelta: {x: 7.94, y: 6.04}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1951275707
 GameObject:
   m_ObjectHideFlags: 0
