@@ -20,7 +20,7 @@ public class GlobalBehavior : MonoBehaviour
 
     void Update()
     {
-        PotatoBucket.text = "Potato Collected: " + count + " ";
+        PotatoBucket.text = count + " ";
         UpdateEscapeStatus();
     }
 
