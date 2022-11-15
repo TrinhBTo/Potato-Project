@@ -33,6 +33,6 @@ public class GlobalBehavior : MonoBehaviour
     }
     public void PickUp_Bucket()
     {
-        ++count; 
+        count = count + 5; 
     }
 }
