@@ -7,12 +7,9 @@ using UnityEngine.UI;
 public class move : MonoBehaviour
 {   
     public Rigidbody2D rb;
-    public Vector2 movement = new Vector2();
-    #region hero_movement_variables
-    public float degreesPerSecond = 45.0f;
-    public bool mouse = false;
-    public float speed = 3f;
-    #endregion
+    public Vector2 movement;
+    public float moveSpeed;
+    public Animator animator;
 
 
     #region bullet_config
@@ -26,7 +23,6 @@ public class move : MonoBehaviour
     
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         //Vector3 temp = new Vector3(transform.position.x, transform.position.y, -2f);
         //Vector2 temp = new Vector2(transform.position.x, transform.position.y);
         //temp.z = -2f;
@@ -37,40 +33,19 @@ public class move : MonoBehaviour
 
     void Update()
     {   
-        #region Player rotation based on mouse position
-        /*
-        //Get the Screen positions of the object
-        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint (transform.position);         
-        //Get the Screen position of the mouse
-        Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
-        //Get the angle between the points
-        float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
-        firePoint.rotation = Quaternion.Euler (new Vector3(0f,0f,angle + 90));
-        //transform.rotation =  Quaternion.Euler (new Vector3(0f,0f,angle + 90));
-        */
-        #endregion
+        // Handle Input
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
-        #region movement
-        if (Input.GetKeyDown(KeyCode.M))
+        animator.SetFloat("Horizontal", movement.x); 
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
         {
-            mouse = !mouse;
+            animator.SetFloat("LastHorizontal", Input.GetAxisRaw("Horizontal")); 
+            animator.SetFloat("LastVertical", Input.GetAxisRaw("Vertical"));
         }
-
-        Vector3 mousePosition = transform.position;
-        
-        if (mouse)
-        {
-            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition.z = 0f;
-            transform.position = mousePosition;
-
-        }
-        else {
-            GetInput();
-            MoveCharacter(movement);
-        }
-        #endregion
-
 
         if ((Input.GetKey(KeyCode.Space)) && Time.time > nextFire)
         {
@@ -82,16 +57,11 @@ public class move : MonoBehaviour
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
 
-    private void GetInput() {
-     
-     movement.x = Input.GetAxisRaw("Horizontal");
-     movement.y = Input.GetAxisRaw("Vertical");
-    }
-    public void MoveCharacter(Vector2 movementVector)
+    void FixedUpdate()
     {
-        movementVector.Normalize();
-        rb.velocity = movementVector * speed;
-    } 
+        // Movement
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
+    }
 
     private void fire()
     {       
