@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Scripts/MainMenu.cs.meta
 guid: 78d85837156e544d282ea0bc86067297
+=======
+guid: d198bfd9c8bc54ab5827048dba121dbe
+>>>>>>> Stashed changes:Assets/Scripts/PlayerController.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
