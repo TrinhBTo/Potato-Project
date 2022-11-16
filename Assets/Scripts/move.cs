@@ -118,11 +118,20 @@ public class move : MonoBehaviour
             Destroy(collision.gameObject);
             GlobalBehavior.GlobalBehaviorInstance.PickUp_Bucket();
         }
+        if(collision.gameObject.tag == "Exit")
+        {
+            bool escape = GlobalBehavior.GlobalBehaviorInstance.isEscape;
+            bool istime = GlobalBehavior.GlobalBehaviorInstance.isTimeUp;
+            if(escape == true && istime == false)
+            {
+                Debug.Log("Escaped");
+            }
+        }
 
     }
     void OnCollisionEnter2D(Collision2D myCollisionInfo)
     {
-            if(myCollisionInfo.gameObject.tag == "Human")
+        if(myCollisionInfo.gameObject.tag == "Human")
         {
             HealthSystem.MinusLife();
         }

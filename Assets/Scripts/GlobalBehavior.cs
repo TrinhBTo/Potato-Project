@@ -7,6 +7,9 @@ public class GlobalBehavior : MonoBehaviour
 {
     public static GlobalBehavior GlobalBehaviorInstance = null;
     public Text PotatoBucket = null;
+
+
+    public bool isTimeUp = false;
     //bucket picked count
     private int count = 0;
 

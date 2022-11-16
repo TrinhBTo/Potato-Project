@@ -26,6 +26,7 @@ public class TimerScript : MonoBehaviour
             }
             else{
                 Debug.Log("Time's up");
+                GlobalBehavior.GlobalBehaviorInstance.isTimeUp = true;
                 TimeLeft = 0;
                 TimerOn = false;
             }
