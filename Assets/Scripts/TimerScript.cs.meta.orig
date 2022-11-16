@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Scripts/TimerScript.cs.meta
+guid: ec210bbc64d7d4e08ba9f1c27ed9e60d
+=======
+guid: d198bfd9c8bc54ab5827048dba121dbe
+>>>>>>> Stashed changes:Assets/Scripts/PlayerController.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
